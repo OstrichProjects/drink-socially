@@ -26,8 +26,8 @@ var GameSchema = new Schema({
         trim: false
     },
     rules: {
-        type: Array,
-        default: ['No rules have been set for this game.']
+        type: String,
+        default: 'No rules have been set for this game.'
     },
     user: {
         type: Schema.ObjectId,

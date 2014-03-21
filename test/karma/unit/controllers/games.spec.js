@@ -53,7 +53,7 @@
                     $httpBackend.expectGET('games').respond([{
                         title: 'An Game about MEAN',
                         description: 'MEAN rocks!',
-                        rules: ['test rule 1','test rule 2']
+                        rules: 'test rule 1'
                     }]);
 
                     // run controller
@@ -64,7 +64,7 @@
                     expect(scope.games).toEqualData([{
                         title: 'An Game about MEAN',
                         description: 'MEAN rocks!',
-                        rules: ['test rule 1','test rule 2']
+                        rules: 'test rule 1'
                     }]);
 
                 });
@@ -79,7 +79,7 @@
                         return {
                             title: 'An Game about MEAN',
                             description: 'MEAN rocks!',
-                            rules: ['test rule 1','test rule 2']
+                            rules: 'test rule 1'
                         };
                     };
 
@@ -104,7 +104,7 @@
                         return {
                             title: 'An Game about MEAN',
                             description: 'MEAN rocks!',
-                            rules: ['test rule 1','test rule 2']
+                            rules: 'test rule 1'
                         };
                     };
 
@@ -114,14 +114,14 @@
                             _id: '525cf20451979dea2c000001',
                             title: 'An Game about MEAN',
                             description: 'MEAN rocks!',
-                            rules: ['test rule 1','test rule 2']
+                            rules: 'test rule 1'
                         };
                     };
 
                     // fixture mock form input values
                     scope.title = 'An Game about MEAN';
-                    scope.content = 'MEAN rocks!';
-                    scope.rules = ['test rule 1','test rule 2'];
+                    scope.description = 'MEAN rocks!';
+                    scope.rules = 'test rule 1';
 
                     // test post request is sent
                     $httpBackend.expectPOST('games', postGameData()).respond(responseGameData());
@@ -133,7 +133,7 @@
                     // test form input(s) are reset
                     expect(scope.title).toEqual('');
                     expect(scope.description).toEqual('');
-                    expect(scope.rules).toEqual([]);
+                    expect(scope.rules).toEqual('');
 
                     // test URL location to new object
                     expect($location.path()).toBe('/games/' + responseGameData()._id);

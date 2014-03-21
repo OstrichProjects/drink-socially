@@ -4,7 +4,7 @@ angular.module('mean.games').controller('GamesController', ['$scope', '$statePar
     $scope.global = Global;
 
     $scope.create = function() {
-        var game = new Game({
+        var game = new Games({
             title: this.title,
             description: this.description,
             rules: this.rules
@@ -15,7 +15,7 @@ angular.module('mean.games').controller('GamesController', ['$scope', '$statePar
 
         this.title = '';
         this.description = '';
-        this.rules = [];
+        this.rules = '';
     };
 
     $scope.remove = function(game) {
@@ -47,13 +47,13 @@ angular.module('mean.games').controller('GamesController', ['$scope', '$statePar
     };
 
     $scope.find = function() {
-        games.query(function(games) {
+        Games.query(function(games) {
             $scope.games = games;
         });
     };
 
     $scope.findOne = function() {
-        games.get({
+        Games.get({
             gameId: $stateParams.gameId
         }, function(game) {
             $scope.game = game;

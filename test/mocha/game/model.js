@@ -27,7 +27,7 @@ describe('<Unit Test>', function() {
                 game = new Game({
                     title: 'Game Title',
                     description: 'Game Description',
-                    rules: ['rule1','rule2','rule3'],
+                    rules: 'rule1',
                     user: user
                 });
 
