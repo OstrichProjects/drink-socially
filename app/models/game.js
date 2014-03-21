@@ -8,9 +8,9 @@ var mongoose = require('mongoose'),
 
 
 /**
- * Article Schema
+ * Game Schema
  */
-var ArticleSchema = new Schema({
+var GameSchema = new Schema({
     created: {
         type: Date,
         default: Date.now
@@ -20,10 +20,14 @@ var ArticleSchema = new Schema({
         default: '',
         trim: true
     },
-    content: {
+    description: {
         type: String,
         default: '',
-        trim: true
+        trim: false
+    },
+    rules: {
+        type: Array,
+        default: ['No rules have been set for this game.']
     },
     user: {
         type: Schema.ObjectId,
@@ -34,17 +38,17 @@ var ArticleSchema = new Schema({
 /**
  * Validations
  */
-ArticleSchema.path('title').validate(function(title) {
+GameSchema.path('title').validate(function(title) {
     return title.length;
 }, 'Title cannot be blank');
 
 /**
  * Statics
  */
-ArticleSchema.statics.load = function(id, cb) {
+GameSchema.statics.load = function(id, cb) {
     this.findOne({
         _id: id
     }).populate('user', 'name username').exec(cb);
 };
 
-mongoose.model('Article', ArticleSchema);
+mongoose.model('Game', GameSchema);

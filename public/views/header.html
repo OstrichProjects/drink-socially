@@ -1,14 +1,14 @@
 <div class="" data-ng-controller="HeaderController">
     <ul class="navbar-nav nav">
         <li>
-            <a class="navbar-brand" href="/">MEAN - A Modern Stack</a>
+            <a class="navbar-brand" href="/">Drink Socially</a>
         </li>
         <li data-ng-repeat="item in menu" data-ng-show="global.user" ui-route="/{{item.link}}" ng-class="{active: $uiRoute}">
             <a href="#!/{{item.link}}">{{item.title}}</a>
         </li>
     </ul>
     <ul class="navbar-nav nav pull-right" data-ng-hide="global.authenticated">
-        <li><a href="auth/facebook" target="_blank" class="facebook-login"></a>
+        <li><a href="auth/facebook" class="facebook-login"></a>
         </li>
     </ul>
     <ul class="navbar-nav nav pull-right" data-ng-show="global.authenticated">

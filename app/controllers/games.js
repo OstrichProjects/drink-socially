@@ -4,97 +4,97 @@
  * Module dependencies.
  */
 var mongoose = require('mongoose'),
-    Article = mongoose.model('Article'),
+    Game = mongoose.model('Game'),
     _ = require('lodash');
 
 
 /**
- * Find article by id
+ * Find game by id
  */
-exports.article = function(req, res, next, id) {
-    Article.load(id, function(err, article) {
+exports.game = function(req, res, next, id) {
+    Game.load(id, function(err, game) {
         if (err) return next(err);
-        if (!article) return next(new Error('Failed to load article ' + id));
-        req.article = article;
+        if (!game) return next(new Error('Failed to load game ' + id));
+        req.game = game;
         next();
     });
 };
 
 /**
- * Create an article
+ * Create an game
  */
 exports.create = function(req, res) {
-    var article = new Article(req.body);
-    article.user = req.user;
+    var game = new Game(req.body);
+    game.user = req.user;
 
-    article.save(function(err) {
+    game.save(function(err) {
         if (err) {
             return res.send('users/signup', {
                 errors: err.errors,
-                article: article
+                game: game
             });
         } else {
-            res.jsonp(article);
+            res.jsonp(game);
         }
     });
 };
 
 /**
- * Update an article
+ * Update an game
  */
 exports.update = function(req, res) {
-    var article = req.article;
+    var game = req.game;
 
-    article = _.extend(article, req.body);
+    game = _.extend(game, req.body);
 
-    article.save(function(err) {
+    game.save(function(err) {
         if (err) {
             return res.send('users/signup', {
                 errors: err.errors,
-                article: article
+                game: game
             });
         } else {
-            res.jsonp(article);
+            res.jsonp(game);
         }
     });
 };
 
 /**
- * Delete an article
+ * Delete an game
  */
 exports.destroy = function(req, res) {
-    var article = req.article;
+    var game = req.game;
 
-    article.remove(function(err) {
+    game.remove(function(err) {
         if (err) {
             return res.send('users/signup', {
                 errors: err.errors,
-                article: article
+                game: game
             });
         } else {
-            res.jsonp(article);
+            res.jsonp(game);
         }
     });
 };
 
 /**
- * Show an article
+ * Show an game
  */
 exports.show = function(req, res) {
-    res.jsonp(req.article);
+    res.jsonp(req.game);
 };
 
 /**
- * List of Articles
+ * List of Games
  */
 exports.all = function(req, res) {
-    Article.find().sort('-created').populate('user', 'name username').exec(function(err, articles) {
+    Game.find().sort('-created').populate('user', 'name username').exec(function(err, games) {
         if (err) {
             res.render('error', {
                 status: 500
             });
         } else {
-            res.jsonp(articles);
+            res.jsonp(games);
         }
     });
 };
