@@ -23,3 +23,12 @@ footer {
 footer p {
     padding:5px 0 12px 10px
 }
+
+.facebook-login {
+    background-image: url(../img/facebook_login.png);
+    background-size: contain;
+    height: 45px;
+    width: 138px;
+    right: 15px;
+    top: 3px;
+}
