@@ -1,3 +1,5 @@
 <section data-ng-controller="IndexController">
-	<h1>This is the home view</h1>
+	<h1>Welcome to Drink Socially</h1>
+	<div data-ng-hide="global.authenticated">To get started, login with facebook so that the games that you can associated with your account.</div>
+	<div data-ng-show="global.authenticated">Now that you're logged in you can click the games tab to view recently created games or you can create a game!</div>
 </section>

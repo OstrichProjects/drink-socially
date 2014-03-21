@@ -4,10 +4,8 @@
 			<span>{{game.created | date:'medium'}}</span> /
 			<span>{{game.user.name}}</span>
 			<h2><a data-ng-href="#!/games/{{game._id}}">{{game.title}}</a></h2>
-			<div>{{game.description}}</div>
-			<div data-ng-repeat="i in game.rules">
-			  {{i}}
-			</div>
+			<div><h2>Description:</h2>  {{game.description}}</div>
+    		<div><h2>Rules:</h2>  {{game.rules}}</div>
 		</li>
 	</ul>
 	<h1 data-ng-hide="!games || games.length">No games yet. <br> Why don't you <a href="/#!/games/create">Create One</a>?</h1>
