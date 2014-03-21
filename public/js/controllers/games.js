@@ -8,7 +8,6 @@ angular.module('mean.games').controller('GamesController', ['$scope', '$statePar
             title: this.title,
             description: this.description,
             rules: this.rules
-
         });
         game.$save(function(response) {
             $location.path('games/' + response._id);
