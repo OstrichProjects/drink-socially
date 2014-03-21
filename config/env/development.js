@@ -1,7 +1,7 @@
 'use strict';
 
 module.exports = {
-    db: 'mongodb://localhost/mean-dev',
+    db: 'mongodb://heroku:op4JHJHdUrktwoe7qJYA-1t8q0hMSn4ND4Ez_brBP0-SRs0Y5Uup6b9ybGT-fIyy5gVcawRtJlv-aWJoSNzWEw@oceanic.mongohq.com:10017/app23236793',
     app: {
         name: 'Drink Socially'
     },
