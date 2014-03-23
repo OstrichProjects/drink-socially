@@ -46,6 +46,7 @@ require('./config/passport')(passport);
 
 var app = express();
 
+
 // Express settings
 require('./config/express')(app, passport, db);
 
@@ -68,7 +69,6 @@ var walk = function(path) {
     });
 };
 walk(routes_path);
-
 
 // Start the app by listening on <port>
 var port = process.env.PORT || config.port;

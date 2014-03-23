@@ -1,11 +1,23 @@
-.navbar .nav>li>a.brand {
+.navbar .nav>li>a.navbar-brand {
     padding-left:20px;
-    margin-left:0
+    margin-left:0;
+    font-size: 30px;
+}
+
+.navbar .nav>li>a {
+    font-size: 15px;
+    line-height:60px;
+    padding-top:0;
+    padding-bottom:0;
 }
 
 .content {
     margin-top:70px;
     width:100%
+}
+
+.navbar-nav > li > a.dropdown-toggle {
+    padding-right: 15px;
 }
 
 footer {
@@ -31,4 +43,9 @@ footer p {
     width: 138px;
     right: 15px;
     top: 3px;
+}
+
+.prof-pic {
+    border-radius: 25%;
+    margin-right:10px;
 }
