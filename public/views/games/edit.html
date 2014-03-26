@@ -1,9 +1,9 @@
-<section data-ng-controller="GamesController" data-ng-init="findOne()">
-	<form class="form-horizontal col-md-6" role="form" data-ng-submit="update()">
+<section data-ng-controller="GamesController">
+	<form class="form-horizontal col-md-6" role="form" data-ng-submit="create()">
 		<div class="form-group">
 			<label for="title" class="col-md-2 control-label">Title</label>
 			<div class="col-md-10">
-				<input type="text" class="form-control" data-ng-model="game.title" id="title" placeholder="Title" required>
+				<input type="text" class="form-control" data-ng-model="title" id="title" placeholder="Title" required>
 			</div>
 		</div>
 		<div class="form-group">
@@ -17,7 +17,7 @@
 			<div class="col-md-10">
 				<textarea data-ng-model="rules" id="rules" cols="30" rows="10" placeholder="Rules" class="form-control" required></textarea>
 			</div>
-		</div>	
+		</div>		
 		<div class="form-group">
 			<div class="col-md-offset-2 col-md-10">
 				<button type="submit" class="btn btn-default">Submit</button>

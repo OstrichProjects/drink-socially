@@ -1,0 +1,12 @@
+<section data-ng-controller="PostsController" data-ng-init="findOne()">
+    <span>{{post.created | date:'medium'}}</span> /
+    <span>{{post.user.name}} just {{post.text}}</span>
+    <div data-ng-show="global.user._id == post.user._id">
+        <a class="btn" href="/#!/posts/{{post._id}}/edit">
+        	<i class="glyphicon glyphicon-edit"></i>
+        </a>
+        <a class="btn" data-ng-click="remove();">
+            <i class="glyphicon glyphicon-trash"></i>
+        </a>
+    </div>
+</section>

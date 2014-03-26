@@ -27,6 +27,14 @@ angular.module('mean').config(['$stateProvider', '$urlRouterProvider',
       .state('home', {
         url: '/',
         templateUrl: 'views/index.html'
+    })
+      .state('all posts', {
+        url: '/posts',
+        templateUrl: 'views/posts/list.html'
+    })
+      .state('post by id', {
+        url: '/posts/:postId',
+        templateUrl: 'views/posts/view.html'
     });
 }
 ]);

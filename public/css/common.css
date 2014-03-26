@@ -49,3 +49,8 @@ footer p {
     border-radius: 25%;
     margin-right:10px;
 }
+
+.create-new {
+    position: absolute;
+    top: 300px;
+}
