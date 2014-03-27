@@ -6,7 +6,7 @@ angular.module('mean.posts').controller('PostsController', ['$scope', '$statePar
     $scope.hideEdit = function(){
 
         // When a model is changed, the view will be automatically
-        // updated by by AngularJS. In this case it will hide the tooltip.
+        // updated by AngularJS. In this case it will hide the tooltip.
 
         $scope.editing = false;
     };
@@ -21,10 +21,10 @@ angular.module('mean.posts').controller('PostsController', ['$scope', '$statePar
             text: this.text
         });
         post.$save(function(response) {
-            $location.path('posts/' + response._id);
+            $location.path('posts');
         });
 
-        this.text = '';
+        this.text
     };
 
     $scope.remove = function(post) {
@@ -51,7 +51,7 @@ angular.module('mean.posts').controller('PostsController', ['$scope', '$statePar
         post.updated.push(new Date().getTime());
 
         post.$update(function() {
-            $location.path('posts/' + post._id);
+            $location.path('posts');
         });
     };
 
